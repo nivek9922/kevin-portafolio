@@ -38,6 +38,7 @@ export const es = {
     skipToContent: "Saltar al contenido",
     newTab: "(abre en una pestaña nueva)",
   },
+  resume: { label: "Descargar CV", href: "/cv/kevin-rodriguez-cv-es.pdf" },
   home: {
     eyebrow: "Frontend Engineer · Cali, Colombia",
     greeting: { text: "Hola, soy Kevin", accent: "." },

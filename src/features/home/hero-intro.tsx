@@ -1,21 +1,23 @@
 import { Reveal } from "@/components/motion/reveal";
 import { Chip, ChipList } from "@/components/ui/chip";
+import { PillLink } from "@/components/ui/pill-link";
 import { Tag } from "@/components/ui/tag";
 import { type Locale, localePath } from "@/lib/i18n";
-import type { HomeContent } from "@/types/content";
+import type { HomeContent, SiteContent } from "@/types/content";
 import { Portrait } from "./portrait";
 import { ProjectShortcut } from "./project-shortcut";
 
 interface HeroIntroProps {
   readonly locale: Locale;
   readonly content: HomeContent;
+  readonly resume: SiteContent["resume"];
 }
 
 /**
  * Portrait + core stack beside the summary and availability, then the project shortcuts in a
  * full-width row so neither column leaves an empty gap.
  */
-export function HeroIntro({ locale, content }: HeroIntroProps) {
+export function HeroIntro({ locale, content, resume }: HeroIntroProps) {
   return (
     <div className="mt-[clamp(26px,3.6vw,50px)]">
       <div className="auto-grid-300 items-center gap-[clamp(22px,3.4vw,52px)]">
@@ -40,6 +42,11 @@ export function HeroIntro({ locale, content }: HeroIntroProps) {
               </Tag>
             ))}
           </ul>
+          <div className="mt-[clamp(18px,2vw,24px)]">
+            <PillLink href={resume.href} variant="cta" download>
+              {resume.label}
+            </PillLink>
+          </div>
         </Reveal>
       </div>
 

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kevin Rodríguez Pérez — CV</title>
+    <link rel="stylesheet" href="cv.css" />
+  </head>
+  <body>
+    <header>
+      <h1>KEVIN RODRÍGUEZ PÉREZ</h1>
+      <p class="headline">Frontend Engineer · React · Next.js · TypeScript · Microfrontends</p>
+      <p class="contact">Cali, Colombia · Remoto (LATAM / EE. UU.) · Disponibilidad inmediata</p>
+      <p class="contact">
+        <a href="mailto:nivek9922@gmail.com">nivek9922@gmail.com</a> · +57 302 688 9618
+      </p>
+      <p class="contact">
+        <a href="https://www.linkedin.com/in/kevin-rodriguez-833289224/">linkedin.com/in/kevin-rodriguez-833289224</a> ·
+        <a href="https://github.com/nivek9922">github.com/nivek9922</a>
+      </p>
+    </header>
+
+    <h2>Perfil profesional</h2>
+    <p>
+      Frontend Engineer con más de 4 años construyendo aplicaciones web para los sectores financiero y salud.
+      Especialista en React, Next.js y TypeScript: diseñé e implementé una arquitectura de microfrontends con Module
+      Federation para una plataforma de home banking de marca blanca y lideré técnicamente su desarrollo web. Con
+      capacidad full stack (Node.js, APIs REST, SQL) para diagnosticar y resolver problemas de punta a punta —del
+      frontend a las APIs y la base de datos—, y con dos productos propios construidos de cero: Citavek, un SaaS de
+      reservas en producción, y KYZZ, un e-commerce con panel de operación.
+    </p>
+
+    <h2>Habilidades técnicas</h2>
+    <div class="skills">
+      <p>
+        <strong>Frontend:</strong> React, Next.js (App Router, Server Components, Server Actions), TypeScript,
+        JavaScript (ES6+), Microfrontends, Module Federation, Atomic Design, Material UI, Tailwind CSS, Zustand, HTML5,
+        CSS3, Diseño responsive y mobile-first, Rendimiento web
+      </p>
+      <p>
+        <strong>Backend &amp; datos:</strong> Node.js (NestJS, Express), APIs REST, SQL, PostgreSQL, Oracle, Prisma,
+        Laravel/PHP, SOAP, Webhooks
+      </p>
+      <p>
+        <strong>Arquitectura &amp; prácticas:</strong> Clean / Hexagonal Architecture, Vertical Slice, Multi-tenant,
+        SOLID, Patrones de diseño, Clean Code
+      </p>
+      <p>
+        <strong>Infraestructura &amp; tooling:</strong> Docker, Kubernetes, AWS (EC2, S3), Vercel, cPanel, Git/GitHub,
+        Sentry, CI/CD, Agile/Scrum
+      </p>
+      <p><strong>Otros:</strong> React Native, MongoDB, Figma, Cloudinary, Wompi, Desarrollo asistido por IA</p>
+    </div>
+
+    <h2>Experiencia profesional</h2>
+    <section class="role">
+      <h3>Analista de Desarrollo · Líder técnico de desarrollo web</h3>
+      <p class="meta"><span>Smart Financial — Software bancario · Remoto</span><span>Oct 2023 – Jun 2026</span></p>
+      <p class="context">Plataforma empresarial de home banking de marca blanca para entidades financieras.</p>
+      <ul>
+        <li>
+          Lideré técnicamente el desarrollo web y las decisiones de arquitectura frontend, coordinando con los equipos de
+          backend, QA y producto bajo metodología Agile/Scrum.
+        </li>
+        <li>
+          Investigué alternativas arquitectónicas y diseñé e implementé una arquitectura de microfrontends con Next.js y
+          Module Federation —un host que orquesta sesión y navegación, y módulos remotos que se despliegan por separado—,
+          aplicando Vertical Slice para separar dominios.
+        </li>
+        <li>
+          Construí un sistema de componentes reutilizables con Atomic Design y Material UI (v5), estandarizando la
+          interfaz y la experiencia de usuario entre módulos y microfrontends.
+        </li>
+        <li>
+          Optimicé el rendimiento del frontend —listas grandes, renders innecesarios, carga de datos y uso de recursos—
+          mejorando la estabilidad general de la aplicación.
+        </li>
+        <li>
+          Integré Sentry para el monitoreo y análisis de incidentes, y fui referente técnico en el diagnóstico de
+          problemas de punta a punta: frontend → APIs REST → servicios backend en Java → base de datos Oracle.
+        </li>
+        <li>
+          Desarrollé y consumí APIs REST con Node.js y ejecuté consultas SQL sobre Oracle para validar información y
+          apoyar diagnósticos.
+        </li>
+        <li>
+          Desplegué en ambientes de prueba y validación con Docker y Kubernetes, verificando funcionalidad y rendimiento
+          antes de cada liberación.
+        </li>
+      </ul>
+    </section>
+
+    <section class="role">
+      <h3>Analista de Desarrollo (Full Stack)</h3>
+      <p class="meta">
+        <span>Promedico — Fondo de empleados de médicos · Cali, Colombia</span><span>Jul 2022 – Oct 2023</span>
+      </p>
+      <p class="context">
+        Fondo de empleados exclusivo para médicos en Colombia: ahorro, créditos, amparos y bienestar para sus asociados.
+      </p>
+      <ul>
+        <li>
+          Desarrollé nuevas funcionalidades y requerimientos sobre las aplicaciones web de gestión de préstamos y
+          servicios financieros (React JS, Laravel 8 / PHP), usadas en la operación diaria del fondo.
+        </li>
+        <li>
+          Construí y mantuve la app móvil multiplataforma con React Native, publicada y en funcionamiento en App Store y
+          Google Play, e implementé en AWS las APIs REST que la alimentan.
+        </li>
+        <li>
+          Integré SAP mediante servicios web SOAP para gestionar la información de los asociados, y DataCrédito para
+          análisis crediticio y validación de riesgo.
+        </li>
+        <li>
+          Desplegué a producción en servidores internos, cPanel (React JS y Laravel) y AWS, y publiqué las apps móviles en
+          las tiendas de Apple y Android.
+        </li>
+        <li>
+          Di soporte a aplicativos internos y externos —corrección de errores, mejoras y mantenimiento evolutivo— y
+          documenté en detalle los desarrollos y procesos.
+        </li>
+      </ul>
+    </section>
+
+    <h2>Proyectos propios</h2>
+    <section class="role">
+      <h3>Citavek — SaaS multi-tenant de reservas para barberías (en producción)</h3>
+      <p class="meta">
+        <span>Producto propio · citavek.com · github.com/nivek9922/citavek-app</span><span></span>
+      </p>
+      <ul>
+        <li>
+          Definí el producto y la arquitectura (Clean / Hexagonal) y lo construí de punta a punta con Next.js 16 (App
+          Router), Node.js y PostgreSQL: autenticación, modelado de datos, APIs y despliegue.
+        </li>
+        <li>
+          Reserva pública en 4 pasos (servicio → barbero → fecha → confirmación) y una página pública por negocio,
+          personalizable desde su panel.
+        </li>
+        <li>
+          Panel de gestión con acceso por rol para negocios, servicios, barberos, clientes, disponibilidad y agenda, y una
+          torre de control con telemetría de la plataforma: negocios activos, citas, adopción de funcionalidades y
+          onboarding.
+        </li>
+        <li>
+          Uso asistentes de IA como herramienta de apoyo; la implementación y la revisión del código las realizo
+          manualmente antes de integrarlo.
+        </li>
+      </ul>
+    </section>
+    <section class="role">
+      <h3>KYZZ — E-commerce de moda con panel de operación (sale a producción pronto)</h3>
+      <p class="meta"><span>Proyecto propio · kyzz-shop.vercel.app</span><span></span></p>
+      <ul>
+        <li>
+          Tienda completa con Next.js 16, React 19, TypeScript, Prisma y PostgreSQL: catálogo con variantes e
+          inventario, carrito, favoritos, checkout y seguimiento de pedidos.
+        </li>
+        <li>
+          Integré la pasarela Wompi con webhooks para confirmar y conciliar pagos de forma automática, además de
+          contraentrega y pedidos por WhatsApp e Instagram.
+        </li>
+        <li>
+          Panel de operación para ingresos por canal, pedidos, productos, cupones, devoluciones y clientes; imágenes en
+          Cloudinary y Server Components, Server Actions y Cache Components para el rendimiento.
+        </li>
+      </ul>
+    </section>
+    <section class="role">
+      <h3>Portafolio personal bilingüe</h3>
+      <p class="meta"><span>Proyecto propio · github.com/nivek9922/kevin-portafolio</span><span></span></p>
+      <ul>
+        <li>
+          Next.js 16 y TypeScript estricto, generado estáticamente en español e inglés, con un sistema de diseño en
+          Tailwind CSS v4, accesibilidad verificada con axe y SEO completo (metadatos, hreflang, sitemap, Open Graph).
+        </li>
+      </ul>
+    </section>
+
+    <h2>Educación</h2>
+    <p class="inline">
+      <span><strong>Ingeniería Informática</strong> · Universidad Autónoma de Occidente, Cali</span
+      ><span>Graduado: mar 2025</span>
+    </p>
+
+    <h2>Certificaciones</h2>
+    <p>
+      <strong style="color: #1f3a5f">Platzi:</strong> Next.js Avanzado (ene 2026) · React Avanzado (feb 2026) · Backend
+      con NestJS (mar 2026) · Backend con Express.js (mar 2026)
+    </p>
+
+    <h2>Idiomas</h2>
+    <p>
+      <strong style="color: #1f3a5f">Español:</strong> Nativo &nbsp;&nbsp;
+      <strong style="color: #1f3a5f">Inglés:</strong> Básico (A2) — lectura de documentación técnica; en mejora continua.
+    </p>
+  </body>
+</html>

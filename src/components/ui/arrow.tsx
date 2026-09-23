@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 
 interface ArrowProps {
-  readonly direction?: "right" | "up-right";
+  readonly direction?: "right" | "up-right" | "down";
   /** Arrows inside mono labels fall back to the monospace system face, as in the design. */
   readonly mono?: boolean;
   /**
@@ -13,6 +13,8 @@ interface ArrowProps {
   readonly className?: string;
 }
 
+const glyphs = { right: "→", "up-right": "↗", down: "↓" } as const;
+
 /**
  * Decorative arrow glyph. The web fonts do not ship →/↗, so the design renders them with the
  * system fallback; the dedicated font tokens reproduce that instead of next/font's fallback.
@@ -23,7 +25,7 @@ export function Arrow({ direction = "right", mono = false, tight = true, classNa
       aria-hidden
       className={cn(tight && "leading-none", mono ? "font-symbol-mono" : "font-symbol", className)}
     >
-      {direction === "right" ? "→" : "↗"}
+      {glyphs[direction]}
     </span>
   );
 }

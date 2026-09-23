@@ -239,6 +239,8 @@ export interface SiteContent {
     readonly skipToContent: string;
     readonly newTab: string;
   };
+  /** Downloadable CV in the page's language. */
+  readonly resume: { readonly label: string; readonly href: string };
   readonly home: HomeContent;
   readonly experience: ExperienceContent;
   readonly projects: ProjectsContent;

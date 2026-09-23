@@ -1,0 +1,132 @@
+/* Shared print styles for cv-es.html and cv-en.html (US Letter, ATS-friendly single column). */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap");
+
+@page {
+  size: letter;
+  margin: 0.5in 0.6in;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #1f2328;
+  font-family: Lato, "Helvetica Neue", Arial, sans-serif;
+  font-size: 9.9pt;
+  line-height: 1.34;
+  /* Kerning and ligatures can drop spaces from the PDF text layer, which ATS parsers read. */
+  font-kerning: none;
+  font-variant-ligatures: none;
+}
+
+h1 {
+  margin: 0;
+  color: #1f3a5f;
+  font-size: 25pt;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.headline {
+  margin: 2pt 0 4pt;
+  font-size: 11.5pt;
+}
+
+.contact {
+  margin: 0;
+  color: #6b7280;
+  font-size: 9pt;
+}
+
+.contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  margin: 11pt 0 5pt;
+  break-after: avoid;
+  padding-bottom: 3pt;
+  border-bottom: 1.2pt solid #1f3a5f;
+  color: #1f3a5f;
+  font-size: 10.5pt;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+}
+
+.skills p + p {
+  margin-top: 3pt;
+}
+
+.skills strong,
+.inline strong {
+  color: #1f3a5f;
+}
+
+.role {
+  margin-top: 7pt;
+}
+
+/* A role may continue on the next page, but never split its heading or a single bullet. */
+.role h3,
+.role .meta,
+.role .context {
+  break-after: avoid;
+}
+
+li {
+  break-inside: avoid;
+}
+
+.role h3 {
+  margin: 0;
+  font-size: 11pt;
+  font-weight: 700;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12pt;
+  color: #6b7280;
+  font-size: 9.5pt;
+  font-style: italic;
+}
+
+.meta span:last-child {
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.context {
+  color: #6b7280;
+  font-size: 9.5pt;
+  font-style: italic;
+}
+
+ul {
+  margin: 3pt 0 0;
+  padding-left: 14pt;
+}
+
+li + li {
+  margin-top: 1.5pt;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12pt;
+}
+
+.inline span:last-child {
+  color: #6b7280;
+  white-space: nowrap;
+}

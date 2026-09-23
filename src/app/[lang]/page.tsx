@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]">): Promis
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const locale = await resolveLocale(params);
-  const { home, meta } = getContent(locale);
+  const { home, meta, resume } = getContent(locale);
 
   return (
     <div className="animate-view-up">
@@ -25,7 +25,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         accent={home.greeting.accent}
         size="display-xl"
       />
-      <HeroIntro locale={locale} content={home} />
+      <HeroIntro locale={locale} content={home} resume={resume} />
       <CapabilityGrid capabilities={home.capabilities} />
       <PrinciplesBand principles={home.principles} />
       <PersonJsonLd locale={locale} jobTitle={meta.jobTitle} description={meta.pages.home.description} />

@@ -10,6 +10,8 @@ interface PillLinkProps {
   readonly href: string;
   readonly variant: PillLinkVariant;
   readonly external?: boolean;
+  /** Downloads a file (e.g. the CV PDF) instead of navigating; shows ↓ on the `cta` variant. */
+  readonly download?: boolean;
   readonly children: ReactNode;
 }
 
@@ -23,7 +25,7 @@ const variants: Record<PillLinkVariant, string> = {
 };
 
 /** Pill-shaped call to action; external links get the ↗ glyph and open in a new tab. */
-export function PillLink({ href, variant, external = false, children }: PillLinkProps) {
+export function PillLink({ href, variant, external = false, download = false, children }: PillLinkProps) {
   const className = cn(
     "lift rounded-pill font-display font-semibold",
     variant !== "cta" && "px-18 py-11 text-14.5",
@@ -35,6 +37,15 @@ export function PillLink({ href, variant, external = false, children }: PillLink
       <ExternalLink href={href} className={className}>
         {children} <Arrow direction="up-right" tight={false} />
       </ExternalLink>
+    );
+  }
+
+  if (download) {
+    return (
+      <a href={href} download className={className}>
+        {children}
+        {variant === "cta" && <Arrow direction="down" className="text-accent-glow" />}
+      </a>
     );
   }
 
