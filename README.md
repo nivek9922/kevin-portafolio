@@ -17,7 +17,7 @@ Bilingual (Spanish / English), statically generated and built to be read by recr
 
 ## Highlights
 
-- **Server-first.** Every page is a React Server Component. Only three components run on the client, each with a concrete reason documented at the top of the file: the navigation state, the scroll reveal and the portrait tilt.
+- **Server-first.** Every page is a React Server Component. Only three of the project's own components run on the client, each with a concrete reason documented at the top of the file: the navigation state, the scroll reveal and the portrait tilt.
 - **Fully static.** Eight routes (`/es`, `/en` × Home, Experience, Projects, Contact) are prerendered with `generateStaticParams`; unknown paths get a real 404.
 - **Design system as code.** The visual design was made in Claude Design and translated 1:1 into Tailwind CSS v4 tokens — colour, type scale, radii, shadows and fluid spacing — instead of copying generated markup.
 - **Typed content.** Copy lives in typed Spanish and English dictionaries; `satisfies SiteContent` makes the compiler reject a missing translation.
@@ -45,8 +45,9 @@ Measured on production with Lighthouse 12, mobile emulation, September 2026.
 | Fonts | `next/font` — Gabarito, Hanken Grotesk, JetBrains Mono |
 | Images | `next/image` with static imports (AVIF/WebP, intrinsic sizes, no layout shift) |
 | Quality | ESLint (`eslint-config-next`), `tsc --noEmit` |
+| Monitoring | Vercel Web Analytics (cookieless) and Speed Insights (real-user Core Web Vitals) |
 
-No UI library, no state manager, no class-name helpers: the project only depends on Next.js, React and Tailwind.
+No UI library, no state manager, no class-name helpers: besides Next.js, React and Tailwind, the only runtime dependencies are Vercel's analytics and Speed Insights packages.
 
 ## Architecture
 

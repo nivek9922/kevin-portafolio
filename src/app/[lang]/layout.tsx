@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
@@ -56,6 +58,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           </main>
         </div>
         <ScrollReveal />
+        {/* Vercel Web Analytics (cookieless page views) and Speed Insights (real-user Core Web Vitals). */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
