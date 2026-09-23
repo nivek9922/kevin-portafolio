@@ -17,6 +17,8 @@ interface ProjectCaseProps {
   readonly tone: ProjectCaseTone;
   /** Right column: what was built (Citavek) or feature groups (KYZZ). */
   readonly aside: ReactNode;
+  /** Optional full-width block after the columns, used to keep them balanced. */
+  readonly footer?: ReactNode;
   readonly eagerPreview?: boolean;
   readonly className?: string;
 }
@@ -27,7 +29,7 @@ const tones = {
 } as const satisfies Record<ProjectCaseTone, object>;
 
 /** One own product: labels, summary with stack and links, an aside slot, preview and gallery. */
-export function ProjectCase({ project, tone, aside, eagerPreview = false, className }: ProjectCaseProps) {
+export function ProjectCase({ project, tone, aside, footer, eagerPreview = false, className }: ProjectCaseProps) {
   const styles = tones[tone];
   const titleId = `${project.anchor}-title`;
 
@@ -48,7 +50,8 @@ export function ProjectCase({ project, tone, aside, eagerPreview = false, classN
         </Tag>
       </div>
 
-      <div className="mt-[clamp(16px,2vw,24px)] auto-grid-290 items-start gap-split">
+      {/* 340 (design: 290) stacks the columns on tablets, where the aside would leave a gap. */}
+      <div className="mt-[clamp(16px,2vw,24px)] auto-grid-340 items-start gap-split">
         <div className="min-w-0">
           <h2 id={titleId} className="font-display text-title-lg">
             <Lines lines={project.titleLines} />
@@ -71,6 +74,8 @@ export function ProjectCase({ project, tone, aside, eagerPreview = false, classN
         </div>
         <div className="min-w-0">{aside}</div>
       </div>
+
+      {footer && <div className="mt-12">{footer}</div>}
 
       {project.preview && (
         <Reveal className="mt-frame">

@@ -5,7 +5,7 @@ interface BuildListProps {
   readonly built: CitavekContent["built"];
 }
 
-/** «Qué construí»: expandable steps; the emphasised one is rendered on ink. */
+/** «Qué construí»: steps with their notes always visible; the emphasised one is rendered on ink. */
 export function BuildList({ built }: BuildListProps) {
   return (
     <div className="rounded-card bg-sunk p-card">
@@ -19,6 +19,7 @@ export function BuildList({ built }: BuildListProps) {
             tone={item.emphasis ? "ink" : "paper"}
             title={item.title}
             note={item.note}
+            expanded
           />
         ))}
       </ul>

@@ -18,6 +18,9 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projec
   const locale = await resolveLocale(params);
   const { projects } = getContent(locale);
   const { citavek, kyzz } = projects;
+  // The last KYZZ group spans the full width so both columns end at a similar height.
+  const kyzzAsideGroups = kyzz.featureGroups.slice(0, -1);
+  const kyzzFooterGroup = kyzz.featureGroups.at(-1);
 
   return (
     <div className="animate-view-up">
@@ -35,11 +38,12 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projec
           tone="sage"
           aside={
             <div className="flex flex-col gap-12">
-              {kyzz.featureGroups.map((group) => (
+              {kyzzAsideGroups.map((group) => (
                 <FeatureGroup key={group.title} {...group} />
               ))}
             </div>
           }
+          footer={kyzzFooterGroup && <FeatureGroup {...kyzzFooterGroup} />}
         />
       </Reveal>
       <NextStepLink href={localePath(locale, "contact")} label={projects.nextStep} />

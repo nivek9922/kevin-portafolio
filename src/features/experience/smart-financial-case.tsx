@@ -12,7 +12,7 @@ interface SmartFinancialCaseProps {
   readonly content: SmartFinancialContent;
 }
 
-/** Main role: summary and facts, plus architecture, diagnostics and decisions. */
+/** Main role: summary and facts beside architecture and diagnostics; decisions span the full width. */
 export function SmartFinancialCase({ content }: SmartFinancialCaseProps) {
   const { facts, architecture, diagnostics, decisions } = content;
   const titleId = `${content.anchor}-title`;
@@ -95,21 +95,22 @@ export function SmartFinancialCase({ content }: SmartFinancialCaseProps) {
               </ol>
             </DetailBlock>
           </Reveal>
-
-          <Reveal>
-            <DetailBlock title={decisions.title}>
-              <NumberedList items={decisions.items} tone="paper" />
-              <ChipList className="mt-14 gap-9">
-                {decisions.practices.map((practice) => (
-                  <Chip key={practice.label} as="li" variant="practice" dot={practice.dot}>
-                    {practice.label}
-                  </Chip>
-                ))}
-              </ChipList>
-            </DetailBlock>
-          </Reveal>
         </div>
       </div>
+
+      {/* Full width so the two columns above stay balanced. */}
+      <Reveal className="mt-[clamp(14px,1.8vw,20px)]">
+        <DetailBlock title={decisions.title}>
+          <NumberedList items={decisions.items} tone="paper" layout="columns" />
+          <ChipList className="mt-14 gap-9">
+            {decisions.practices.map((practice) => (
+              <Chip key={practice.label} as="li" variant="practice" dot={practice.dot}>
+                {practice.label}
+              </Chip>
+            ))}
+          </ChipList>
+        </DetailBlock>
+      </Reveal>
     </Panel>
   );
 }

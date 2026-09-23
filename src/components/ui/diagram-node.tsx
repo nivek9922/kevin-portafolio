@@ -12,6 +12,8 @@ interface DiagramNodeProps extends DiagramNodeContent {
   readonly arrow?: boolean;
   /** Hover lift + accent ring. Static nodes (e.g. SAP, DataCrédito) opt out. */
   readonly interactive?: boolean;
+  /** Keep the note always visible instead of revealing it on hover/focus. */
+  readonly expanded?: boolean;
   readonly as?: "div" | "li";
   readonly className?: string;
 }
@@ -42,6 +44,7 @@ export function DiagramNode({
   metaPlacement = "end",
   arrow = false,
   interactive = true,
+  expanded = false,
   as: Element = "div",
   className,
 }: DiagramNodeProps) {
@@ -50,7 +53,7 @@ export function DiagramNode({
 
   return (
     <Element
-      tabIndex={note ? 0 : undefined}
+      tabIndex={note && !expanded ? 0 : undefined}
       className={cn(
         "group",
         sizeStyles.box,
@@ -85,7 +88,13 @@ export function DiagramNode({
         )}
       </div>
       {note && (
-        <div className="grid grid-rows-[1fr] [transition:grid-template-rows_.4s,opacity_.4s] pointer-fine:grid-rows-[0fr] pointer-fine:opacity-0 pointer-fine:group-hover:grid-rows-[1fr] pointer-fine:group-hover:opacity-100 pointer-fine:group-focus-visible:grid-rows-[1fr] pointer-fine:group-focus-visible:opacity-100">
+        <div
+          className={cn(
+            "grid grid-rows-[1fr]",
+            !expanded &&
+              "[transition:grid-template-rows_.4s,opacity_.4s] pointer-fine:grid-rows-[0fr] pointer-fine:opacity-0 pointer-fine:group-hover:grid-rows-[1fr] pointer-fine:group-hover:opacity-100 pointer-fine:group-focus-visible:grid-rows-[1fr] pointer-fine:group-focus-visible:opacity-100",
+          )}
+        >
           <div className="min-h-0 overflow-hidden">
             <p className={cn(sizeStyles.note, toneStyles.note)}>{note}</p>
           </div>

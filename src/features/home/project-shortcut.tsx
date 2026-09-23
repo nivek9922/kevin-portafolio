@@ -32,7 +32,7 @@ export function ProjectShortcut({ title, subtitle, tone, href }: ProjectShortcut
   return (
     <Link
       href={href}
-      className={cn("lift flex items-center justify-between gap-14 rounded-tile px-20 py-16", styles.card)}
+      className={cn("lift flex h-full items-center justify-between gap-14 rounded-tile px-20 py-16", styles.card)}
     >
       <span>
         <span className="block font-display text-card-link font-bold">{title}</span>
