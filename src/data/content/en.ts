@@ -16,7 +16,7 @@ export const en = {
       experience: {
         title: "Experience",
         description:
-          "Four years in financial and healthcare software: white-label home banking with microfrontends at Smart Financial, and loans and financial services at Promedico.",
+          "Four years in financial and healthcare software: Banco de Venezuela's home banking with microfrontends at Smart Financial, and loans and financial services at Promedico.",
       },
       projects: {
         title: "Projects",
@@ -59,7 +59,7 @@ export const en = {
     shortcuts: [
       {
         title: "Smart Financial",
-        subtitle: "Home banking · Technical lead",
+        subtitle: "Banco de Venezuela · Web technical lead",
         tone: "paper",
         page: "experience",
         anchor: "smart-financial",
@@ -107,12 +107,18 @@ export const en = {
       label: "01 · Smart Financial",
       title: { lead: "Home banking", accent: "white label" },
       summary:
-        "Enterprise home banking platform for financial institutions. I led the web development and frontend architecture decisions, coordinating with backend, QA and product under Agile/Scrum.",
+        "Home banking for Banco de Venezuela, the country's largest bank, on a platform designed to support more than 10 million users. Over more than a year we built 4 products — Personal and Business, on web and app; I technically led and built the web side, coordinating with backend, QA and product under Agile/Scrum. The platform was built white-label so it could be sold to more banks.",
       facts: {
         periodLabel: "Period",
         period: "Oct 2023 – Jun 2026",
         roleLabel: "Role",
         role: "Development Analyst · Technical lead, web development",
+        clientLabel: "Client",
+        client: "Banco de Venezuela",
+        productsLabel: "Products",
+        products: "Personal and Business · web and app",
+        scaleLabel: "Scale",
+        scale: "Designed for 10+ million users",
         stackLabel: "Stack",
         stack: ["React", "Next.js", "TypeScript", "Material UI v5", "Zustand", "Node.js", "Java", "Oracle"],
       },
@@ -145,10 +151,24 @@ export const en = {
           { title: "Oracle", note: "SQL queries to validate data." },
         ],
       },
+      security: {
+        title: "Banking-grade security on the web layer",
+        tag: "JWT · JWS · JWE",
+        items: [
+          { title: "JWT tokens", note: "Signed with JWS and encrypted with JWE when exchanged with the APIs." },
+          { title: "Encrypted payloads", note: "Sensitive data travels encrypted between the client and the services." },
+          { title: "Secure cookies", note: "HttpOnly, Secure and SameSite; no tokens in browser storage." },
+          { title: "Strict session", note: "Reloading the page or going idle ends the session." },
+          { title: "MFA · OTP", note: "Second authentication factor for sign-in and transactions." },
+          { title: "CSP · CSRF", note: "Content Security Policy and protection against forged requests." },
+        ],
+      },
       decisions: {
         title: "Decisions and responsibilities",
         items: [
           "Researched architectural options and designed the microfrontend architecture with Next.js and Module Federation, applying Vertical Slice to separate domains.",
+          "Segmented the platform by domain: premium users come in through a domain with its own deployment, for a smoother experience.",
+          "Built the platform white-label so it could be sold to other banks beyond Banco de Venezuela.",
           "Optimised frontend performance: large lists, unnecessary renders, data loading and resource use.",
           "Acted as technical reference for end-to-end incident diagnosis, with Sentry for monitoring and analysis.",
           "Deployed to test and staging environments with Docker and Kubernetes before each release.",

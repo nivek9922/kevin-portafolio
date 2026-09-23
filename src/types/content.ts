@@ -95,7 +95,16 @@ export interface SmartFinancialContent {
   readonly label: string;
   readonly title: { readonly lead: string; readonly accent: string };
   readonly summary: string;
-  readonly facts: RoleFacts & { readonly stackLabel: string; readonly stack: readonly string[] };
+  readonly facts: RoleFacts & {
+    readonly clientLabel: string;
+    readonly client: string;
+    readonly productsLabel: string;
+    readonly products: string;
+    readonly scaleLabel: string;
+    readonly scale: string;
+    readonly stackLabel: string;
+    readonly stack: readonly string[];
+  };
   readonly architecture: {
     readonly title: string;
     readonly tag: string;
@@ -107,6 +116,12 @@ export interface SmartFinancialContent {
     readonly title: string;
     readonly tag: string;
     readonly steps: readonly DiagramNodeContent[];
+  };
+  /** Web-layer security measures of the banking platform. */
+  readonly security: {
+    readonly title: string;
+    readonly tag: string;
+    readonly items: readonly DiagramNodeContent[];
   };
   readonly decisions: {
     readonly title: string;

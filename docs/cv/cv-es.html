@@ -24,7 +24,8 @@
     <p>
       Frontend Engineer con más de 4 años construyendo aplicaciones web para los sectores financiero y salud.
       Especialista en React, Next.js y TypeScript: diseñé e implementé una arquitectura de microfrontends con Module
-      Federation para una plataforma de home banking de marca blanca y lideré técnicamente su desarrollo web. Con
+      Federation para el home banking del Banco de Venezuela —una plataforma de marca blanca diseñada para más de 10
+      millones de usuarios— y lideré técnicamente su desarrollo web. Con
       capacidad full stack (Node.js, APIs REST, SQL) para diagnosticar y resolver problemas de punta a punta —del
       frontend a las APIs y la base de datos—, y con dos productos propios construidos de cero: Citavek, un SaaS de
       reservas en producción, y KYZZ, un e-commerce con panel de operación.
@@ -56,16 +57,29 @@
     <section class="role">
       <h3>Analista de Desarrollo · Líder técnico de desarrollo web</h3>
       <p class="meta"><span>Smart Financial — Software bancario · Remoto</span><span>Oct 2023 – Jun 2026</span></p>
-      <p class="context">Plataforma empresarial de home banking de marca blanca para entidades financieras.</p>
+      <p class="context">
+        Home banking de marca blanca. Cliente: Banco de Venezuela, el banco más grande del país; plataforma diseñada para
+        soportar más de 10 millones de usuarios.
+      </p>
       <ul>
         <li>
-          Lideré técnicamente el desarrollo web y las decisiones de arquitectura frontend, coordinando con los equipos de
-          backend, QA y producto bajo metodología Agile/Scrum.
+          Lideré técnicamente y desarrollé la parte web de 4 productos de home banking para el Banco de Venezuela
+          —Personas y Empresas, en web y app— durante más de un año, coordinando con backend, QA y producto bajo
+          Agile/Scrum.
         </li>
         <li>
           Investigué alternativas arquitectónicas y diseñé e implementé una arquitectura de microfrontends con Next.js y
           Module Federation —un host que orquesta sesión y navegación, y módulos remotos que se despliegan por separado—,
           aplicando Vertical Slice para separar dominios.
+        </li>
+        <li>
+          Implementé la seguridad de la capa web propia de un entorno bancario: tokens JWT firmados (JWS) y cifrados
+          (JWE), cifrado de payloads, cookies HttpOnly/Secure/SameSite, MFA/OTP, CSP, protección CSRF y una sesión
+          estricta que se cierra al recargar la página o por inactividad.
+        </li>
+        <li>
+          Segmenté la plataforma por dominios: los usuarios premium acceden por un dominio con despliegue propio para
+          garantizar mayor fluidez. La plataforma se construyó en marca blanca para venderse a otros bancos.
         </li>
         <li>
           Construí un sistema de componentes reutilizables con Atomic Design y Material UI (v5), estandarizando la
@@ -76,12 +90,9 @@
           mejorando la estabilidad general de la aplicación.
         </li>
         <li>
-          Integré Sentry para el monitoreo y análisis de incidentes, y fui referente técnico en el diagnóstico de
-          problemas de punta a punta: frontend → APIs REST → servicios backend en Java → base de datos Oracle.
-        </li>
-        <li>
-          Desarrollé y consumí APIs REST con Node.js y ejecuté consultas SQL sobre Oracle para validar información y
-          apoyar diagnósticos.
+          Integré Sentry para el monitoreo de incidentes y fui referente técnico en el diagnóstico de punta a punta:
+          frontend → APIs REST (Node.js) → servicios backend en Java → Oracle, con consultas SQL para validar
+          información.
         </li>
         <li>
           Desplegué en ambientes de prueba y validación con Docker y Kubernetes, verificando funcionalidad y rendimiento

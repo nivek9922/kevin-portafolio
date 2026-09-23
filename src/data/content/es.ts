@@ -16,7 +16,7 @@ export const es = {
       experience: {
         title: "Experiencia",
         description:
-          "Cuatro años en software financiero y de salud: home banking de marca blanca con microfrontends en Smart Financial y préstamos y servicios financieros en Promedico.",
+          "Cuatro años en software financiero y de salud: home banking del Banco de Venezuela con microfrontends en Smart Financial y préstamos y servicios financieros en Promedico.",
       },
       projects: {
         title: "Proyectos",
@@ -59,7 +59,7 @@ export const es = {
     shortcuts: [
       {
         title: "Smart Financial",
-        subtitle: "Home banking · Líder técnico",
+        subtitle: "Banco de Venezuela · Líder técnico web",
         tone: "paper",
         page: "experience",
         anchor: "smart-financial",
@@ -107,12 +107,18 @@ export const es = {
       label: "01 · Smart Financial",
       title: { lead: "Home banking", accent: "de marca blanca" },
       summary:
-        "Plataforma empresarial de home banking para entidades financieras. Lideré técnicamente el desarrollo web y las decisiones de arquitectura frontend, coordinando con backend, QA y producto bajo Agile/Scrum.",
+        "Home banking del Banco de Venezuela, el banco más grande del país, con una plataforma diseñada para soportar más de 10 millones de usuarios. Durante más de un año construimos 4 productos —Personas y Empresas, en web y app—; lideré técnicamente y desarrollé la parte web, coordinando con backend, QA y producto bajo Agile/Scrum. La plataforma se construyó en marca blanca para venderse a más bancos.",
       facts: {
         periodLabel: "Periodo",
         period: "Oct 2023 – Jun 2026",
         roleLabel: "Rol",
         role: "Analista de Desarrollo · Líder técnico de desarrollo web",
+        clientLabel: "Cliente",
+        client: "Banco de Venezuela",
+        productsLabel: "Productos",
+        products: "Personas y Empresas · web y app",
+        scaleLabel: "Escala",
+        scale: "Diseñada para más de 10 millones de usuarios",
         stackLabel: "Stack",
         stack: ["React", "Next.js", "TypeScript", "Material UI v5", "Zustand", "Node.js", "Java", "Oracle"],
       },
@@ -145,10 +151,24 @@ export const es = {
           { title: "Oracle", note: "Consultas SQL para validar información." },
         ],
       },
+      security: {
+        title: "Seguridad bancaria en la capa web",
+        tag: "JWT · JWS · JWE",
+        items: [
+          { title: "Tokens JWT", note: "Firmados con JWS y cifrados con JWE en el intercambio con las APIs." },
+          { title: "Payloads cifrados", note: "La información sensible viaja cifrada entre el cliente y los servicios." },
+          { title: "Cookies seguras", note: "HttpOnly, Secure y SameSite; ningún token en el almacenamiento del navegador." },
+          { title: "Sesión estricta", note: "Recargar la página o quedar inactivo cierra la sesión." },
+          { title: "MFA · OTP", note: "Segundo factor de autenticación en el acceso y las operaciones." },
+          { title: "CSP · CSRF", note: "Política de seguridad de contenido y protección contra peticiones falsificadas." },
+        ],
+      },
       decisions: {
         title: "Decisiones y responsabilidades",
         items: [
           "Investigué alternativas arquitectónicas y diseñé la arquitectura de microfrontends con Next.js y Module Federation, aplicando Vertical Slice para separar dominios.",
+          "Segmenté la plataforma por dominios: los usuarios premium acceden por un dominio con despliegue propio para garantizar mayor fluidez.",
+          "Construimos la plataforma en marca blanca, para que pudiera venderse a otros bancos además del Banco de Venezuela.",
           "Optimicé el rendimiento del frontend: listas grandes, renders innecesarios, carga de datos y uso de recursos.",
           "Fui referente técnico en el diagnóstico de incidentes de punta a punta, con Sentry para monitoreo y análisis.",
           "Desplegué en ambientes de prueba y validación con Docker y Kubernetes antes de cada liberación.",

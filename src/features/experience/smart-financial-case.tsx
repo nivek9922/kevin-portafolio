@@ -12,9 +12,9 @@ interface SmartFinancialCaseProps {
   readonly content: SmartFinancialContent;
 }
 
-/** Main role: summary and facts beside architecture and diagnostics; decisions span the full width. */
+/** Main role: summary and facts beside architecture and security; diagnostics and decisions span the full width. */
 export function SmartFinancialCase({ content }: SmartFinancialCaseProps) {
-  const { facts, architecture, diagnostics, decisions } = content;
+  const { facts, architecture, diagnostics, security, decisions } = content;
   const titleId = `${content.anchor}-title`;
 
   return (
@@ -25,7 +25,8 @@ export function SmartFinancialCase({ content }: SmartFinancialCaseProps) {
       aria-labelledby={titleId}
       className="mt-intro scroll-mt-112"
     >
-      <div className="auto-grid-280 items-start gap-split">
+      {/* 340 (design: 280) stacks the columns on tablets, where the right column would run long. */}
+      <div className="auto-grid-340 items-start gap-split">
         <RoleSummary
           variant="primary"
           titleId={titleId}
@@ -47,7 +48,20 @@ export function SmartFinancialCase({ content }: SmartFinancialCaseProps) {
                 </Tag>
               ),
             },
+            {
+              label: facts.clientLabel,
+              value: <span className="text-14.5 font-bold text-ink-strong">{facts.client}</span>,
+            },
             { label: facts.roleLabel, value: <span className="text-14.5 text-ink-strong">{facts.role}</span> },
+            { label: facts.productsLabel, value: <span className="text-14.5 text-ink-strong">{facts.products}</span> },
+            {
+              label: facts.scaleLabel,
+              value: (
+                <Tag variant="period" tone="neutral">
+                  {facts.scale}
+                </Tag>
+              ),
+            },
             {
               label: facts.stackLabel,
               alignStart: true,
@@ -79,26 +93,37 @@ export function SmartFinancialCase({ content }: SmartFinancialCaseProps) {
             </DetailBlock>
           </Reveal>
 
+          {/* Notes stay open: this is key content for the case. */}
           <Reveal>
-            <DetailBlock title={diagnostics.title} tag={diagnostics.tag} tagTone="sage">
-              <ol className="flex flex-wrap items-center gap-8">
-                {diagnostics.steps.map((step, index) => (
-                  <DiagramNode
-                    key={step.title}
-                    as="li"
-                    size="sm"
-                    arrow={index > 0}
-                    className={index === 0 ? "flex-[1_1_128px]" : "flex-[1_1_150px]"}
-                    {...step}
-                  />
+            <DetailBlock title={security.title} tag={security.tag}>
+              <ul className="auto-grid-160 gap-9">
+                {security.items.map((item) => (
+                  <DiagramNode key={item.title} as="li" size="sm" expanded {...item} />
                 ))}
-              </ol>
+              </ul>
             </DetailBlock>
           </Reveal>
         </div>
       </div>
 
-      {/* Full width so the two columns above stay balanced. */}
+      {/* Diagnostics and decisions span the full width so the two columns above stay balanced. */}
+      <Reveal className="mt-[clamp(14px,1.8vw,20px)]">
+        <DetailBlock title={diagnostics.title} tag={diagnostics.tag} tagTone="sage">
+          <ol className="flex flex-wrap items-center gap-8">
+            {diagnostics.steps.map((step, index) => (
+              <DiagramNode
+                key={step.title}
+                as="li"
+                size="sm"
+                arrow={index > 0}
+                className={index === 0 ? "flex-[1_1_128px]" : "flex-[1_1_150px]"}
+                {...step}
+              />
+            ))}
+          </ol>
+        </DetailBlock>
+      </Reveal>
+
       <Reveal className="mt-[clamp(14px,1.8vw,20px)]">
         <DetailBlock title={decisions.title}>
           <NumberedList items={decisions.items} tone="paper" layout="columns" />
