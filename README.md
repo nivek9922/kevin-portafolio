@@ -3,6 +3,8 @@
 Personal portfolio of **Kevin Rodríguez**, Frontend Engineer (React · Next.js · TypeScript · Microfrontends) based in Cali, Colombia.
 Bilingual (Spanish / English), statically generated and built to be read by recruiters and reviewed by engineers.
 
+**Live:** [kevin-portafolio-seven.vercel.app](https://kevin-portafolio-seven.vercel.app/es) · [English](https://kevin-portafolio-seven.vercel.app/en) · CV: [ES](https://kevin-portafolio-seven.vercel.app/cv/kevin-rodriguez-cv-es.pdf) / [EN](https://kevin-portafolio-seven.vercel.app/cv/kevin-rodriguez-cv-en.pdf)
+
 ![Home page](docs/screenshots/home.jpg)
 
 <table>
@@ -21,6 +23,17 @@ Bilingual (Spanish / English), statically generated and built to be read by recr
 - **Typed content.** Copy lives in typed Spanish and English dictionaries; `satisfies SiteContent` makes the compiler reject a missing translation.
 - **Accessible by default.** One `h1` per page, skip link, visible focus, AA contrast, hover-only content reachable by keyboard and touch, and `prefers-reduced-motion` respected. axe reports no violations on any page.
 - **SEO complete.** Per-page metadata, `hreflang` alternates, canonical URLs, sitemap, robots, JSON-LD `Person` and Open Graph images generated per language.
+
+## Lighthouse
+
+Measured on production with Lighthouse 12, mobile emulation, September 2026.
+
+| Page | Performance | Accessibility | Best practices | SEO | LCP | CLS |
+| --- | :-: | :-: | :-: | :-: | :-: | :-: |
+| Home | 96 | 100 | 100 | 100 | 2.3 s | 0 |
+| Experience | 96 | 100 | 100 | 100 | 2.3 s | 0 |
+| Projects | 95 | 100 | 100 | 100 | 2.5 s | 0 |
+| Contact | 98 | 100 | 100 | 100 | 2.2 s | 0 |
 
 ## Tech stack
 
