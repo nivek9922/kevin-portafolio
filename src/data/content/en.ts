@@ -21,7 +21,7 @@ export const en = {
       projects: {
         title: "Projects",
         description:
-          "Two complete products, built from scratch: Citavek, an appointment management SaaS in production, and KYZZ, a fashion e-commerce with its own back office.",
+          "My own products, from idea to paying customers: Citavek, a booking SaaS with paying businesses; DEMACHOS, e-commerce on my white-label base; Stockvek, a lightweight ERP in development; and KYZZ.",
       },
       contact: {
         title: "Contact",
@@ -64,8 +64,15 @@ export const en = {
         page: "experience",
         anchor: "smart-financial",
       },
-      { title: "Citavek", subtitle: "Booking SaaS · In production", tone: "ink", page: "projects", anchor: "citavek" },
-      { title: "KYZZ", subtitle: "Full e-commerce · Launching soon", tone: "sage", page: "projects", anchor: "kyzz" },
+      { title: "Citavek", subtitle: "Booking SaaS · Paying customers", tone: "ink", page: "projects", anchor: "citavek" },
+      {
+        title: "DEMACHOS",
+        subtitle: "E-commerce · Almost ready",
+        tone: "sage",
+        page: "projects",
+        anchor: "demachos",
+      },
+      { title: "Stockvek", subtitle: "Lightweight ERP · In development", tone: "paper", page: "projects", anchor: "stockvek" },
     ],
     capabilities: [
       {
@@ -252,81 +259,241 @@ export const en = {
   projects: {
     intro: {
       eyebrow: "My own products",
-      title: "Two complete products, built from scratch.",
+      title: "My own products, from idea to paying customers.",
     },
     citavek: {
       anchor: "citavek",
       label: "01 · Citavek",
-      status: { label: "In production", tone: "live" },
-      titleLines: ["Appointment", "management SaaS"],
+      status: { label: "In production · paying customers", tone: "live" },
+      titleLines: ["Booking and", "scheduling SaaS"],
       summary:
-        "A multi-tenant booking platform for barbershops in Colombia. Today it manages businesses, services, barbers, customers, availability and scheduling from one dashboard. I defined the product, the architecture and built it end to end.",
+        "A multi-tenant platform for barbershops, hair salons, spas and nail studios in Colombia: every business gets its own branded booking store, a schedule per professional, cash-up and commissions, and WhatsApp reminders. I defined the product and the architecture, built it end to end, and today I sell and run it.",
+      metrics: [
+        { value: "2", label: "businesses paying for a plan" },
+        { value: "20", label: "prospects in the sales pipeline" },
+      ],
       stack: [
-        { label: "Next.js 16 · App Router", tone: "ink" },
-        { label: "Clean / Hexagonal", tone: "neutral" },
+        { label: "Next.js 16 · React 19", tone: "ink" },
+        { label: "Hexagonal", tone: "neutral" },
         { label: "Multi-tenant", tone: "neutral" },
-        { label: "Node.js", tone: "neutral" },
-        { label: "PostgreSQL", tone: "neutral" },
-        { label: "Auth", tone: "neutral" },
-        { label: "REST APIs", tone: "neutral" },
+        { label: "PostgreSQL · Prisma 7", tone: "neutral" },
+        { label: "Better Auth", tone: "neutral" },
+        { label: "WhatsApp Cloud API", tone: "neutral" },
+        { label: "Mercado Pago", tone: "neutral" },
+        { label: "PWA · Web Push", tone: "neutral" },
+        { label: "Vitest · Playwright", tone: "neutral" },
       ],
       links: [
         { label: "citavek.com", href: projectUrls.citavek, variant: "accent" },
-        { label: "Repository", href: projectUrls.citavekRepository, variant: "subtle" },
-        { label: "See a live barbershop", href: projectUrls.citavekShowcase, variant: "sage-soft" },
+        { label: "See a sample store", href: projectUrls.citavekShowcase, variant: "sage-soft" },
       ],
       built: {
-        title: "What I built",
+        title: "What it offers today",
         items: [
           {
-            title: "Public booking in 4 steps",
-            note: "Service → barber → date → confirmation, with prices and durations adding up.",
+            title: "A booking store per business",
+            note: "citavek.com/their-business with five templates, their colour, logo and services. Customers book without an app or an account, and reschedule or cancel from their own link.",
           },
           {
-            title: "A public page per business",
-            note: "Every barbershop gets its own link — citavek.com/their-shop — fully customisable from their panel: colours, logo, cover photo, services and prices.",
+            title: "Schedule, cash-up and team",
+            note: "Schedule per professional and by the hour, “How did they pay?” on completion, end-of-day cash-up, commissions, loyalty, no-shows and a monthly report.",
           },
           {
-            title: "Management panel",
-            note: "Businesses, services, barbers, customers, availability and scheduling, with role-based authenticated access.",
+            title: "Automated WhatsApp",
+            note: "Through Meta's official API: booking confirmation, a reminder with “I'll be there” or “I can't make it” that frees the slot, and alerts to the business. Plus push notifications on the phone.",
+          },
+          {
+            title: "Subscriptions",
+            note: "Basic and Premium plans priced by team size, a 30-day trial, recurring billing with Mercado Pago and automatic referrals.",
           },
           {
             title: "Control tower",
-            note: "Platform telemetry: active businesses, appointments, feature adoption, account health and onboarding.",
+            note: "Platform telemetry: active businesses, feature adoption, account health, onboarding and costs.",
             emphasis: true,
           },
         ],
       },
       preview: {
         image: images.citavekLanding,
-        alt: "Citavek landing page: the Spanish “¿Te suena familiar?” (Sound familiar?) section on WhatsApp scheduling, no-shows and lack of business control, followed by “Three steps and done”.",
+        alt: "Citavek landing page with the Spanish headline “Tu agenda, llena y en orden.” (your schedule, full and in order), a field to type the business name and pick its colour, and a preview of a salon's booking store.",
         url: "citavek.com",
       },
       gallery: [
         {
+          image: images.citavekTemplates,
+          alt: "The “Elige cómo se ve tu tienda” (choose how your store looks) section with the Clásica, Taller and Club templates applied to the San Fernando Barber Club sample store.",
+          caption: "Store templates",
+        },
+        {
           image: images.citavekBooking,
-          alt: "Booking confirmation step on the San Fernando Barber Club public page: summary of services, barber, date and time.",
-          caption: "Booking flow",
+          alt: "San Fernando Barber Club booking store on a phone with the Taller template: cover, Book and WhatsApp buttons and the service menu.",
+          caption: "Mobile booking",
         },
         {
-          image: images.citavekSignUp,
-          alt: "Citavek form to create the account and the barbershop: owner details, public URL, city, brand colour and activation code.",
-          caption: "Barbershop sign-up",
+          image: images.citavekDay,
+          alt: "The “Un día en tu negocio” (a day in your business) section: the eve-of-appointment WhatsApp reminder with “I'll be there” and “I can't make it” buttons, next to the pending appointment in the schedule.",
+          caption: "WhatsApp reminder",
         },
         {
-          image: images.citavekSignIn,
-          alt: "Sign-in form of the Citavek management panel.",
-          caption: "Panel sign in",
+          image: images.citavekReport,
+          alt: "The monthly report section: revenue, customers, retention, no-shows and occupancy, with the report notification on a phone.",
+          caption: "Monthly report",
+        },
+      ],
+    },
+    demachos: {
+      anchor: "demachos",
+      label: "02 · DEMACHOS",
+      status: { label: "Almost ready for production", tone: "soon" },
+      titleLines: ["Full e-commerce", "on my white-label base"],
+      summary:
+        "Online store for a barber-supply distributor in Popayán, connected to its ERP. It is the first store on vek-ecommerce, the white-label base I extracted from KYZZ to sell stores with few changes per client: each client is a repo created from a template tag, and everything brand-specific lives in one place.",
+      metrics: [
+        { value: "900+", label: "SKUs read from the ERP" },
+        { value: "1,100+", label: "automated tests" },
+      ],
+      stack: [
+        { label: "White-label", tone: "ink" },
+        { label: "Wompi · Webhooks", tone: "paper" },
+        { label: "EFFI ERP API", tone: "paper" },
+        { label: "Next.js 16", tone: "paper-outline" },
+        { label: "React 19", tone: "paper-outline" },
+        { label: "TypeScript", tone: "paper-outline" },
+        { label: "Prisma", tone: "paper-outline" },
+        { label: "PostgreSQL", tone: "paper-outline" },
+        { label: "Better Auth", tone: "paper-outline" },
+        { label: "Cloudinary", tone: "paper-outline" },
+        { label: "Vitest · Playwright", tone: "paper-outline" },
+      ],
+      links: [{ label: "demachos.vercel.app", href: projectUrls.demachos, variant: "sage" }],
+      featureGroups: [
+        {
+          title: "Storefront",
+          tone: "paper",
+          items: [
+            "Catalogue with filters and search",
+            "Bundles with per-item options",
+            "Side cart with add-ons",
+            "Wompi: card, Nequi, PSE, DaviPlata",
+            "Cash on delivery and pickup",
+            "Order tracking",
+            "Customer accounts",
+            "Branded emails",
+            "Bottom navigation on mobile",
+          ],
+        },
+        {
+          title: "Operations panel",
+          tone: "ink",
+          items: [
+            "“Today” and monthly figures",
+            "Orders with the next step",
+            "Collections and reconciliation",
+            "Inventory and Excel upload",
+            "Products, categories, colours",
+            "Shipping and toggleable modules",
+            "Users and permissions",
+          ],
+        },
+        {
+          title: "Integration and template",
+          tone: "paper",
+          items: [
+            "Signed ERP webhook",
+            "Daily fallback cron",
+            "Postgres advisory lock",
+            "Brand in one place",
+            "New store from a tag",
+            "Configurable tax",
+            "Photos compressed on upload",
+          ],
+          footnote:
+            "Stock and prices flow in from the EFFI ERP on their own: a signed notification triggers the sync and a daily cron is the safety net. Generic improvements go back to the template and each store pulls them with a merge.",
+        },
+      ],
+      preview: {
+        image: images.demachosStorefront,
+        alt: "DEMACHOS storefront with the Spanish headline “Todo para tu barbería” (everything for your barbershop), search, the category menu and the delivery, cash-on-delivery and in-store pickup perks.",
+        url: "demachos.vercel.app",
+      },
+      gallery: [
+        {
+          image: images.demachosCatalog,
+          alt: "DEMACHOS catalogue with categories and product counts on the left, sorting, and cards tagged “Nuevo” (new) and “Agotado” (sold out).",
+          caption: "Catalogue and filters",
+        },
+        {
+          image: images.demachosMobile,
+          alt: "DEMACHOS home on a phone with search, category chips and the bottom navigation bar.",
+          caption: "Mobile experience",
+        },
+      ],
+    },
+    stockvek: {
+      anchor: "stockvek",
+      label: "03 · Stockvek",
+      status: { label: "In development", tone: "soon" },
+      titleLines: ["Lightweight ERP", "for stock and sales"],
+      summary:
+        "The second product of the Vek family: inventory, purchasing, sales, cash register, DIAN e-invoicing and profitability for Colombian SMEs that sell products. It is a generic multi-tenant SaaS: differences between businesses are solved with configuration, not code. The first pilot is a wholesale confectionery.",
+      stack: [
+        { label: "Modular monolith", tone: "ink" },
+        { label: "Hexagonal", tone: "neutral" },
+        { label: "PostgreSQL · RLS", tone: "neutral" },
+        { label: "Prisma 7 + SQL", tone: "neutral" },
+        { label: "Outbox · pg-boss", tone: "neutral" },
+        { label: "Next.js 16", tone: "neutral" },
+        { label: "Zod 4", tone: "neutral" },
+        { label: "TanStack Table", tone: "neutral" },
+      ],
+      links: [],
+      built: {
+        title: "Progress",
+        items: [
+          {
+            title: "Foundations",
+            note: "Companies created from a business template, roles and per-branch permissions, invitations, tested tenant isolation with RLS, idempotency and an outbox with a worker.",
+          },
+          {
+            title: "Catalogue and pricing",
+            note: "Products and services with packs and unit conversion, barcode scanner and camera, taxes, tiered price lists, customers and suppliers.",
+          },
+          {
+            title: "Multi-branch inventory",
+            note: "Insert-only stock ledger, balances and average cost, adjustments, blind stock counts, internal use and two-step transfers between branches.",
+          },
+          {
+            title: "What comes next",
+            note: "Excel importer for up to 200,000 rows, point of sale, cash-up with count, profit reports and DIAN e-invoicing.",
+            emphasis: true,
+          },
+        ],
+      },
+      preview: {
+        image: images.stockvekStock,
+        alt: "Stockvek prototype with sample data: the Stock screen with inventory value, low stock and out-of-stock counts, and the product table per branch.",
+        url: "Stockvek · approved design",
+      },
+      gallery: [
+        {
+          image: images.stockvekKardex,
+          alt: "Prototype of a product's stock ledger: inbound, outbound, balance, average cost and the detail of each movement.",
+          caption: "Stock ledger",
+        },
+        {
+          image: images.stockvekProfit,
+          alt: "Prototype of the profit report: sales, cost of goods sold, profit and margin per product, with an alert for a product sold below cost.",
+          caption: "Profit report",
         },
       ],
     },
     kyzz: {
       anchor: "kyzz",
-      label: "02 · KYZZ",
+      label: "04 · KYZZ",
       status: { label: "Launching soon", tone: "soon" },
       titleLines: ["Fashion e-commerce", "with its own back office"],
       summary:
-        "A complete womenswear store: catalogue with variants, inventory, cart, wishlist, checkout and Wompi payments, plus a panel where the business manages products, orders, coupons and customers.",
+        "A complete womenswear store: catalogue with variants, inventory, cart, wishlist, checkout and Wompi payments, plus a panel where the business manages products, orders, coupons and customers. Its code is the origin of vek-ecommerce, the base behind DEMACHOS.",
       stack: [
         { label: "Wompi · Webhooks", tone: "ink" },
         { label: "Cash on delivery", tone: "paper" },

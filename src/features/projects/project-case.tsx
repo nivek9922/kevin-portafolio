@@ -6,16 +6,16 @@ import { Panel } from "@/components/ui/panel";
 import { PillLink } from "@/components/ui/pill-link";
 import { Tag } from "@/components/ui/tag";
 import { cn } from "@/lib/cn";
-import type { CitavekContent, KyzzContent } from "@/types/content";
+import type { BuildListProjectContent, FeatureProjectContent } from "@/types/content";
 import { BrowserFrame } from "./browser-frame";
 import { ScreenshotCard } from "./screenshot-card";
 
 type ProjectCaseTone = "paper" | "sage";
 
 interface ProjectCaseProps {
-  readonly project: CitavekContent | KyzzContent;
+  readonly project: BuildListProjectContent | FeatureProjectContent;
   readonly tone: ProjectCaseTone;
-  /** Right column: what was built (Citavek) or feature groups (KYZZ). */
+  /** Right column: what was built (Citavek, Stockvek) or feature groups (DEMACHOS, KYZZ). */
   readonly aside: ReactNode;
   /** Optional full-width block after the columns, used to keep them balanced. */
   readonly footer?: ReactNode;
@@ -24,8 +24,8 @@ interface ProjectCaseProps {
 }
 
 const tones = {
-  paper: { label: "ink", summary: "text-muted", media: "canvas" },
-  sage: { label: "paper", summary: "text-sage-ink-3", media: "paper" },
+  paper: { label: "ink", summary: "text-muted", media: "canvas", metric: "bg-sunk" },
+  sage: { label: "paper", summary: "text-sage-ink-3", media: "paper", metric: "bg-paper" },
 } as const satisfies Record<ProjectCaseTone, object>;
 
 /** One own product: labels, summary with stack and links, an aside slot, preview and gallery. */
@@ -57,6 +57,20 @@ export function ProjectCase({ project, tone, aside, footer, eagerPreview = false
             <Lines lines={project.titleLines} />
           </h2>
           <p className={cn("mt-14 max-w-[36ch] text-16 leading-body", styles.summary)}>{project.summary}</p>
+          {project.metrics && project.metrics.length > 0 && (
+            <dl className="mt-16 grid max-w-[44ch] grid-cols-2 gap-9">
+              {project.metrics.map((metric) => (
+                // Label first in the DOM (dt → dd), figure first on screen; `justify-end` pins it to the top.
+                <div
+                  key={metric.label}
+                  className={cn("flex flex-col-reverse justify-end rounded-tile px-16 py-12", styles.metric)}
+                >
+                  <dt className="mt-4 text-13.5 leading-snug text-muted">{metric.label}</dt>
+                  <dd className="font-display text-title-md">{metric.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
           <ChipList className="mt-16 gap-7">
             {project.stack.map((chip) => (
               <Chip key={chip.label} as="li" variant="tech" tone={chip.tone}>
@@ -64,13 +78,15 @@ export function ProjectCase({ project, tone, aside, footer, eagerPreview = false
               </Chip>
             ))}
           </ChipList>
-          <div className="mt-16 flex flex-wrap gap-9">
-            {project.links.map((link) => (
-              <PillLink key={link.href} href={link.href} variant={link.variant} external>
-                {link.label}
-              </PillLink>
-            ))}
-          </div>
+          {project.links.length > 0 && (
+            <div className="mt-16 flex flex-wrap gap-9">
+              {project.links.map((link) => (
+                <PillLink key={link.href} href={link.href} variant={link.variant} external>
+                  {link.label}
+                </PillLink>
+              ))}
+            </div>
+          )}
         </div>
         <div className="min-w-0">{aside}</div>
       </div>

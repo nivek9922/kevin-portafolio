@@ -27,8 +27,9 @@
       Module Federation for Banco de Venezuela's home banking — a white-label platform designed for 10+ million users —
       and technically led its web development. Full stack
       skills (Node.js, REST APIs, SQL) to diagnose and solve problems end to end — from the frontend to the APIs and the
-      database — plus two products of my own built from scratch: Citavek, a booking SaaS in production, and KYZZ, an
-      e-commerce store with its own operations panel.
+      database — plus products of my own built from scratch: Citavek, a booking SaaS in production with paying
+      businesses; DEMACHOS, an e-commerce store on my own white-label base; and Stockvek, a lightweight ERP in
+      development.
     </p>
 
     <h2>Technical skills</h2>
@@ -43,14 +44,16 @@
         Laravel/PHP, SOAP, Webhooks
       </p>
       <p>
-        <strong>Architecture &amp; practices:</strong> Clean / Hexagonal Architecture, Vertical Slice, Multi-tenancy,
-        SOLID, Design patterns, Clean Code
+        <strong>Architecture &amp; practices:</strong> Clean / Hexagonal Architecture, Modular monolith, Vertical Slice,
+        Multi-tenancy, Row-Level Security, Outbox, White-label, SOLID, Design patterns, Clean Code
       </p>
       <p>
         <strong>Infrastructure &amp; tooling:</strong> Docker, Kubernetes, AWS (EC2, S3), Vercel, cPanel, Git/GitHub,
         Sentry, CI/CD, Agile/Scrum
       </p>
-      <p><strong>Other:</strong> React Native, MongoDB, Figma, Cloudinary, Wompi, AI-assisted development</p>
+      <p>
+        <strong>Other:</strong> React Native, MongoDB, Figma, Cloudinary, Wompi, Mercado Pago, WhatsApp Cloud API, AI-assisted development
+      </p>
     </div>
 
     <h2>Professional experience</h2>
@@ -134,49 +137,48 @@
 
     <h2>Own projects</h2>
     <section class="role">
-      <h3>Citavek — Multi-tenant booking SaaS for barbershops (in production)</h3>
-      <p class="meta"><span>Own product · citavek.com · github.com/nivek9922/citavek-app</span><span></span></p>
+      <h3>Citavek — Multi-tenant booking and scheduling SaaS (in production, paying customers)</h3>
+      <p class="meta"><span>Own product · citavek.com</span><span></span></p>
       <ul>
         <li>
-          Defined the product and its architecture (Clean / Hexagonal) and built it end to end with Next.js 16 (App
-          Router), Node.js and PostgreSQL: authentication, data modelling, APIs and deployment.
+          Defined the product and its multi-tenant hexagonal architecture and built it end to end with Next.js 16,
+          PostgreSQL, Prisma 7 and Better Auth. I now sell and run it: 2 businesses pay for a plan and 20 prospects are
+          in the pipeline.
         </li>
         <li>
-          Four-step public booking flow (service → barber → date → confirmation) and a public page per business,
-          customisable from its panel.
+          For barbershops, salons, spas and nail studios: a booking store per business with five templates, schedules
+          per professional, cash-up, commissions, no-shows, a monthly report and a control tower with platform telemetry.
         </li>
         <li>
-          Role-based management panel for businesses, services, barbers, customers, availability and scheduling, plus a
-          control tower with platform telemetry: active businesses, appointments, feature adoption and onboarding.
+          Automated WhatsApp through Meta's official API (a reminder to confirm that frees the slot, and alerts to the
+          business), push notifications as a PWA, and Basic and Premium plans with recurring billing on Mercado Pago.
         </li>
         <li>I use AI assistants as a support tool; I implement and review the code myself before merging it.</li>
       </ul>
     </section>
     <section class="role">
-      <h3>KYZZ — Fashion e-commerce with an operations panel (launching soon)</h3>
-      <p class="meta"><span>Own project · kyzz-shop.vercel.app</span><span></span></p>
+      <h3>DEMACHOS — E-commerce on my white-label base (almost ready for production)</h3>
+      <p class="meta"><span>Own vek-ecommerce base · demachos.vercel.app</span><span></span></p>
       <ul>
         <li>
-          Complete store with Next.js 16, React 19, TypeScript, Prisma and PostgreSQL: catalogue with variants and
-          inventory, cart, wishlist, checkout and order tracking.
+          Extracted vek-ecommerce from KYZZ, my fashion store: a white-label base where each client is a repository
+          created from a template tag and generic improvements flow back to it.
         </li>
         <li>
-          Integrated the Wompi payment gateway with webhooks to confirm and reconcile payments automatically, plus cash on
-          delivery and orders via WhatsApp and Instagram.
-        </li>
-        <li>
-          Operations panel for revenue by channel, orders, products, coupons, returns and customers; images on Cloudinary,
-          and Server Components, Server Actions and Cache Components for performance.
+          First store, for a barber-supply distributor: Wompi checkout, cash on delivery, an orders and collections
+          panel, and stock and prices for 900+ SKUs synced with the EFFI ERP through a signed webhook. 1,100+ automated
+          tests.
         </li>
       </ul>
     </section>
     <section class="role">
-      <h3>Bilingual personal portfolio</h3>
-      <p class="meta"><span>Own project · github.com/nivek9922/kevin-portafolio</span><span></span></p>
+      <h3>Stockvek — Lightweight inventory and invoicing ERP (in development)</h3>
+      <p class="meta"><span>Own product · Vek family</span><span></span></p>
       <ul>
         <li>
-          Next.js 16 and strict TypeScript, statically generated in Spanish and English, with a Tailwind CSS v4 design
-          system, accessibility verified with axe and complete SEO (metadata, hreflang, sitemap, Open Graph).
+          Multi-tenant SaaS for SMEs that sell products: a hexagonal modular monolith with PostgreSQL Row-Level Security
+          and an outbox with a worker. It already has a catalogue with unit conversion, price lists and multi-branch
+          inventory with a stock ledger and transfers; point of sale, cash register and DIAN e-invoicing come next.
         </li>
       </ul>
     </section>
