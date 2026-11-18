@@ -175,12 +175,19 @@ export interface ProjectLink {
   readonly variant: "accent" | "subtle" | "sage-soft" | "sage";
 }
 
+/** A headline figure of a project, e.g. "2" + "businesses paying". */
+export interface ProjectMetric {
+  readonly value: string;
+  readonly label: string;
+}
+
 interface ProjectBase {
   readonly anchor: string;
   readonly label: string;
   readonly status: { readonly label: string; readonly tone: "live" | "soon" };
   readonly titleLines: readonly string[];
   readonly summary: string;
+  readonly metrics?: readonly ProjectMetric[];
   readonly stack: readonly TechChip[];
   readonly links: readonly ProjectLink[];
   readonly preview?: BrowserPreview;
@@ -191,7 +198,8 @@ export interface BuiltItem extends DiagramNodeContent {
   readonly emphasis?: boolean;
 }
 
-export interface CitavekContent extends ProjectBase {
+/** A project whose aside is a list of what was built (Citavek, Stockvek). Rendered on a paper panel. */
+export interface BuildListProjectContent extends ProjectBase {
   readonly built: { readonly title: string; readonly items: readonly BuiltItem[] };
 }
 
@@ -202,14 +210,17 @@ export interface FeatureGroupContent {
   readonly footnote?: string;
 }
 
-export interface KyzzContent extends ProjectBase {
+/** A project whose aside is groups of feature chips (DEMACHOS, KYZZ). Rendered on a sage panel. */
+export interface FeatureProjectContent extends ProjectBase {
   readonly featureGroups: readonly FeatureGroupContent[];
 }
 
 export interface ProjectsContent {
   readonly intro: PageIntroContent;
-  readonly citavek: CitavekContent;
-  readonly kyzz: KyzzContent;
+  readonly citavek: BuildListProjectContent;
+  readonly demachos: FeatureProjectContent;
+  readonly stockvek: BuildListProjectContent;
+  readonly kyzz: FeatureProjectContent;
   readonly nextStep: string;
 }
 

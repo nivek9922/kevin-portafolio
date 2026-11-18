@@ -1,8 +1,8 @@
 import { DiagramNode } from "@/components/ui/diagram-node";
-import type { CitavekContent } from "@/types/content";
+import type { BuildListProjectContent } from "@/types/content";
 
 interface BuildListProps {
-  readonly built: CitavekContent["built"];
+  readonly built: BuildListProjectContent["built"];
 }
 
 /** «Qué construí»: steps with their notes always visible; the emphasised one is rendered on ink. */

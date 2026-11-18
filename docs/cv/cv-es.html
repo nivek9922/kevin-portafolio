@@ -27,8 +27,9 @@
       Federation para el home banking del Banco de Venezuela —una plataforma de marca blanca diseñada para más de 10
       millones de usuarios— y lideré técnicamente su desarrollo web. Con
       capacidad full stack (Node.js, APIs REST, SQL) para diagnosticar y resolver problemas de punta a punta —del
-      frontend a las APIs y la base de datos—, y con dos productos propios construidos de cero: Citavek, un SaaS de
-      reservas en producción, y KYZZ, un e-commerce con panel de operación.
+      frontend a las APIs y la base de datos—, y con productos propios construidos de cero: Citavek, un SaaS de
+      reservas en producción con negocios pagando; DEMACHOS, un e-commerce sobre mi propia base white-label, y
+      Stockvek, un ERP ligero en desarrollo.
     </p>
 
     <h2>Habilidades técnicas</h2>
@@ -43,14 +44,16 @@
         Laravel/PHP, SOAP, Webhooks
       </p>
       <p>
-        <strong>Arquitectura &amp; prácticas:</strong> Clean / Hexagonal Architecture, Vertical Slice, Multi-tenant,
-        SOLID, Patrones de diseño, Clean Code
+        <strong>Arquitectura &amp; prácticas:</strong> Clean / Hexagonal Architecture, Monolito modular, Vertical Slice,
+        Multi-tenant, Row-Level Security, Outbox, White-label, SOLID, Patrones de diseño, Clean Code
       </p>
       <p>
         <strong>Infraestructura &amp; tooling:</strong> Docker, Kubernetes, AWS (EC2, S3), Vercel, cPanel, Git/GitHub,
         Sentry, CI/CD, Agile/Scrum
       </p>
-      <p><strong>Otros:</strong> React Native, MongoDB, Figma, Cloudinary, Wompi, Desarrollo asistido por IA</p>
+      <p>
+        <strong>Otros:</strong> React Native, MongoDB, Figma, Cloudinary, Wompi, Mercado Pago, WhatsApp Cloud API, Desarrollo asistido por IA
+      </p>
     </div>
 
     <h2>Experiencia profesional</h2>
@@ -135,23 +138,21 @@
 
     <h2>Proyectos propios</h2>
     <section class="role">
-      <h3>Citavek — SaaS multi-tenant de reservas para barberías (en producción)</h3>
-      <p class="meta">
-        <span>Producto propio · citavek.com · github.com/nivek9922/citavek-app</span><span></span>
-      </p>
+      <h3>Citavek — SaaS multi-tenant de reservas y agenda (en producción, con clientes pagando)</h3>
+      <p class="meta"><span>Producto propio · citavek.com</span><span></span></p>
       <ul>
         <li>
-          Definí el producto y la arquitectura (Clean / Hexagonal) y lo construí de punta a punta con Next.js 16 (App
-          Router), Node.js y PostgreSQL: autenticación, modelado de datos, APIs y despliegue.
+          Definí el producto y su arquitectura hexagonal multi-tenant y lo construí de punta a punta con Next.js 16,
+          PostgreSQL, Prisma 7 y Better Auth. Hoy lo vendo y lo opero: 2 negocios pagan su plan y hay 20 posibles
+          clientes en proceso.
         </li>
         <li>
-          Reserva pública en 4 pasos (servicio → barbero → fecha → confirmación) y una página pública por negocio,
-          personalizable desde su panel.
+          Para barberías, salones, spas y uñas: tienda de reservas con cinco plantillas, agenda, caja, comisiones,
+          reporte mensual y torre de control.
         </li>
         <li>
-          Panel de gestión con acceso por rol para negocios, servicios, barberos, clientes, disponibilidad y agenda, y una
-          torre de control con telemetría de la plataforma: negocios activos, citas, adopción de funcionalidades y
-          onboarding.
+          WhatsApp automático con la API oficial de Meta (recordatorio con confirmación que libera el cupo y avisos al
+          negocio), avisos push como PWA y planes Básico y Premium con cobro recurrente en Mercado Pago.
         </li>
         <li>
           Uso asistentes de IA como herramienta de apoyo; la implementación y la revisión del código las realizo
@@ -160,30 +161,26 @@
       </ul>
     </section>
     <section class="role">
-      <h3>KYZZ — E-commerce de moda con panel de operación (sale a producción pronto)</h3>
-      <p class="meta"><span>Proyecto propio · kyzz-shop.vercel.app</span><span></span></p>
+      <h3>DEMACHOS — E-commerce sobre mi base white-label (casi listo para producción)</h3>
+      <p class="meta"><span>Base propia vek-ecommerce · demachos.vercel.app</span><span></span></p>
       <ul>
         <li>
-          Tienda completa con Next.js 16, React 19, TypeScript, Prisma y PostgreSQL: catálogo con variantes e
-          inventario, carrito, favoritos, checkout y seguimiento de pedidos.
+          Extraje vek-ecommerce de KYZZ, mi tienda de moda: una base white-label donde cada cliente es un repositorio
+          creado desde un tag de la plantilla y las mejoras genéricas vuelven a ella.
         </li>
         <li>
-          Integré la pasarela Wompi con webhooks para confirmar y conciliar pagos de forma automática, además de
-          contraentrega y pedidos por WhatsApp e Instagram.
-        </li>
-        <li>
-          Panel de operación para ingresos por canal, pedidos, productos, cupones, devoluciones y clientes; imágenes en
-          Cloudinary y Server Components, Server Actions y Cache Components para el rendimiento.
+          Primera tienda, de una distribuidora de barbería: Wompi, contraentrega, panel de pedidos y stock de más de 900
+          referencias sincronizado con el ERP EFFI por webhook. Más de 1.100 pruebas automatizadas.
         </li>
       </ul>
     </section>
     <section class="role">
-      <h3>Portafolio personal bilingüe</h3>
-      <p class="meta"><span>Proyecto propio · github.com/nivek9922/kevin-portafolio</span><span></span></p>
+      <h3>Stockvek — ERP ligero de inventario y facturación (en desarrollo)</h3>
+      <p class="meta"><span>Producto propio · familia Vek</span><span></span></p>
       <ul>
         <li>
-          Next.js 16 y TypeScript estricto, generado estáticamente en español e inglés, con un sistema de diseño en
-          Tailwind CSS v4, accesibilidad verificada con axe y SEO completo (metadatos, hreflang, sitemap, Open Graph).
+          SaaS multi-tenant para pymes: monolito modular hexagonal con Row-Level Security y outbox. Ya tiene catálogo,
+          precios e inventario multi-sede con kardex; siguen el punto de venta, la caja y la facturación DIAN.
         </li>
       </ul>
     </section>
